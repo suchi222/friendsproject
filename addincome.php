@@ -10,9 +10,11 @@ if (isset($_POST['add'])) {
     $idate = $_POST['date'];
     $description = $_POST['des'];
 
-    $income = "INSERT INTO income ('user_id', 'amount','tdate','description') VALUES ('$userid', '$amount','$date','$des')";
-    $result = mysqli_query($con, $income) or die("Something Went Wrong!");
-    header('location: add_expense.php');
+    $income = "INSERT INTO `income`(`amount`, `idate`, `description`, `user_id`) VALUES($amount,'$idate','$description',$userid)";
+    $result = mysqli_query($con, $income) or die("Something Went Wrong!".mysqli_error($con));
+    if($result){
+        header('location: index.php');
+    }
 }
 ?>
 <!DOCTYPE html>

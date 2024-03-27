@@ -13,6 +13,7 @@ if (isset($_POST['email'])) {
   $rows = mysqli_num_rows($result);
   if ($rows == 1) {
     $_SESSION['email'] = $email;
+    $_SESSION['id']=$rows['id'];
     header("Location: index.php");
   } else {
     $errormsg  = "Wrong";
