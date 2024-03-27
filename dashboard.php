@@ -48,7 +48,6 @@ echo $sum_yesterday_expense;
 				<div class="panel panel-default">
 					<?php
 //Weekly Expense
-// $User_Id=$_SESSION['detsuid'];
 $pastdate=  date("Y-m-d", strtotime("-1 week")); 
 $crrntdte=date("Y-m-d");
 $query2=mysqli_query($con,"select sum(Expense)  as weeklyexpense from expenses where ((ExpenseDate) between '$pastdate' and '$crrntdte') && (User_Id='$User_Id');");
@@ -71,7 +70,6 @@ echo $sum_weekly_expense;
 				<div class="panel panel-default">
 					<?php
 //Monthly Expense
-$User_Id=$_SESSION['detsuid'];
  $monthdate=  date("Y-m-d", strtotime("-1 month")); 
 $crrntdte=date("Y-m-d");
 $query3=mysqli_query($con,"select sum(Expense)  as monthlyexpense from expenses where ((ExpenseDate) between '$monthdate' and '$crrntdte') && (User_Id='$User_Id');");
@@ -97,7 +95,6 @@ echo $sum_monthly_expense;
 				<div class="panel panel-default">
 					<?php
 //Yearly Expense
-// $User_Id=$_SESSION['detsuid'];
  $cyear= date("Y");
 $query4=mysqli_query($con,"select sum(Expense)  as yearlyexpense from expenses where (year(ExpenseDate)='$cyear') && (User_Id='$User_Id');");
 $result4=mysqli_fetch_array($query4);
@@ -124,7 +121,6 @@ echo $sum_yearly_expense;
 				<div class="panel panel-default">
 					<?php
 //Yearly Expense
-// $User_Id=$_SESSION['detsuid'];
 $query5=mysqli_query($con,"select sum(expense)  as totalexpense from expenses where User_Id='$User_Id';");
 $result5=mysqli_fetch_array($query5);
 $sum_total_expense=$result5['totalexpense'];
