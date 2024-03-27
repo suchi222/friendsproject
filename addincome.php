@@ -77,7 +77,7 @@ if (isset($_POST['add'])) {
 			<div class="card mt-4">
 				<h3 class="text-info">Add Income</h3>
 				<div class="card-body">
-					<form action="add_income.php" method="post" autocomplete="off">
+					<form action="addincome.php" method="post" autocomplete="off">
 					<div class="form-group">
 					  <label for="usr" class="font-weight-bold">Enter Amount:</label>
 					  <input type="number" name="amount" class="form-control" id="usr" required>
