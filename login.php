@@ -12,8 +12,10 @@ if (isset($_POST['email'])) {
   $result = mysqli_query($con, $query) or die(mysqli_error($con));
   $rows = mysqli_num_rows($result);
   if ($rows == 1) {
+    while($rows=mysqli_fetch_array($result)) {
     $_SESSION['email'] = $email;
-    $_SESSION['id']=$rows['id'];
+    $_SESSION['user_id']=$rows['user_id'];
+    }
     header("Location: index.php");
   } else {
     $errormsg  = "Wrong";

@@ -5,9 +5,10 @@
 					<div class="panel-body easypiechart-panel">
 <?php
 //Today Expense
-$User_Id=$_SESSION['id'];
+$User_Id=$_SESSION['user_id'];
 $tdate=date('Y-m-d');
-$query=mysqli_query($con,"select sum(expense)  as todaysexpense from expenses where (expenseDate)='$tdate' && (user_id='$User_Id')");
+$sql="SELECT sum(expense) as todaysexpense from expenses where expenseDate=CURRENT_DATE AND user_id=$User_Id";
+$query=mysqli_query($con,$sql);
 $result=mysqli_fetch_array($query);
 $sum_today_expense=$result['todaysexpense'];
  ?> 
