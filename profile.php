@@ -79,8 +79,8 @@ if (isset($_POST['but_upload'])) {
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
                 <a href="index.php" class="list-group-item list-group-item-action"><span data-feather="home"></span> Dashboard</a>
+                <a href="addincome.php" class="list-group-item list-group-item-action "><span data-feather="plus-square"></span> Add Income</a>
                 <a href="add_expense.php" class="list-group-item list-group-item-action "><span data-feather="plus-square"></span> Add Expenses</a>
-                <a href="manage_expense.php" class="list-group-item list-group-item-action "><span data-feather="dollar-sign"></span> Manage Expenses</a>
                 <a href="manage_expense.php" class="list-group-item list-group-item-action "><span data-feather="dollar-sign"></span> Manage Expenses</a>
             </div>
             <div class="sidebar-heading">Settings </div>

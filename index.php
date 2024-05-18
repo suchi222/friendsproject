@@ -88,36 +88,8 @@
         <?php
           include_once("dashboard.php");
         ?>
-        <!-- <div class="row">
-          <div class="col-md">
-            <div class="card">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col text-center">
-                    <a href="add_expense.php"><img src="icon/addex.png" width="57px" />
-                      <p>Add Expenses</p>
-                    </a>
-                  </div>
-                  <div class="col text-center">
-                    <a href="manage_expense.php"><img src="icon/maex.png" width="57px" />
-                      <p>Manage Expenses</p>
-                    </a>
-                  </div>
-                  <div class="col text-center">
-                    <a href="profile.php"><img src="icon/prof.png" width="57px" />
-                      <p>User Profile</p>
-                    </a>
-                  </div>
-                  <div class="col text-center">
-                    <a href="addincome.php"><img src="icon/prof.png" width="57px" />
-                      <p>Add Income</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+      
+       
 <br><br><br>
         <h3 class="mt-4">Full-Expense Report</h3>
         <div class="row">
@@ -227,29 +199,16 @@
         }]
       }
     });
-    // script to remove 
+  
     </script>
     <script src="js/index.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chart-data.js"></script>
     <script src="js/easypiechart.js"></script>
     <script src="js/easypiechart-data.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/custom.js"></script>
-	<script>
-		window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-});
-};
-</script>
-// script to remove 
+    
+
 
 </body>
 

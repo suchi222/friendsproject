@@ -17,7 +17,7 @@ $sum_today_expense=$result['todaysexpense'];
 						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
 echo "0";
 } else {
-echo $sum_today_expense;
+echo "$sum_today_expense";
 }
 
 	?></span></div>
@@ -45,28 +45,7 @@ echo $sum_yesterday_expense;
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<?php
-//Weekly Expense
-$pastdate=  date("Y-m-d", strtotime("-1 week")); 
-$crrntdte=date("Y-m-d");
-$query2=mysqli_query($con,"select sum(Expense)  as weeklyexpense from expenses where ((ExpenseDate) between '$pastdate' and '$crrntdte') && (User_Id='$User_Id');");
-$result2=mysqli_fetch_array($query2);
-$sum_weekly_expense=$result2['weeklyexpense'];
- ?>
-					<div class="panel-body easypiechart-panel">
-						<h4>Last 7day's Expense</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_weekly_expense;?>"><span class="percent"><?php if($sum_weekly_expense==""){
-echo "0";
-} else {
-echo $sum_weekly_expense;
-}
-
-	?></span></div>
-					</div>
-				</div>
-			</div>
+	
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
@@ -78,7 +57,7 @@ $result3=mysqli_fetch_array($query3);
 $sum_monthly_expense=$result3['monthlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Last 30day's Expenses</h4>
+						<h4>Monthly Expenses</h4>
 						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_monthly_expense;?>" ><span class="percent"><?php if($sum_monthly_expense==""){
 echo "0";
 } else {
@@ -90,33 +69,8 @@ echo $sum_monthly_expense;
 				</div>
 			</div>
 		
-		</div><!--/.row-->
-			<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<?php
-//Yearly Expense
- $cyear= date("Y");
-$query4=mysqli_query($con,"select sum(Expense)  as yearlyexpense from expenses where (year(ExpenseDate)='$cyear') && (User_Id='$User_Id');");
-$result4=mysqli_fetch_array($query4);
-$sum_yearly_expense=$result4['yearlyexpense'];
- ?>
-					<div class="panel-body easypiechart-panel">
-						<h4>Current Year Expenses</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
-echo "0";
-} else {
-echo $sum_yearly_expense;
-}
+		
 
-	?></span></div>
-
-
-					</div>
-				
-				</div>
-
-			</div>
 
 		<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">

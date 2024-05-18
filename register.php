@@ -181,18 +181,7 @@ if (isset($_REQUEST['firstname'])) {
     <div class="text-center">Already have an account? <a class="text-success" href="login.php">Login Here</a></div>
   </div>
 </body>
-<!-- Bootstrap core JavaScript -->
-<script src="js/jquery.slim.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- Croppie -->
-<script src="js/profile-picture.js"></script>
-<!-- Menu Toggle Script -->
-<script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-</script>
+
 
 
 </html>
