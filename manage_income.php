@@ -1,16 +1,11 @@
 <?php
 include("session.php");
-$exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$userid'");
+$income_fetched = mysqli_query($con, "SELECT * FROM income WHERE user_id = '$userid'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Expense Manager - Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -53,7 +48,7 @@ $exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$user
             </nav>
 
             <div class="container-fluid">
-                <h3 class="mt-4 text-center">Manage Expenses</h3>
+                <h3 class="mt-4 text-center">Manage Income</h3>
                 <hr>
                 <div class="row justify-content-center">
 
@@ -64,21 +59,22 @@ $exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$user
                                     <th>#</th>
                                     <th>Date</th>
                                     <th>Amount</th>
-                                    <th>Expense Category</th>
+                                    <th>description</th>
                                     <th colspan="2">Action</th>
                                 </tr>
                             </thead>
-                            <?php $count=1; while ($row = mysqli_fetch_array($exp_fetched)) { ?>
+
+                            <?php $count=1; while ($row = mysqli_fetch_array($income_fetched)) { ?>
                                 <tr>
                                     <td><?php echo $count;?></td>
-                                    <td><?php echo $row['expensedate']; ?></td>
-                                    <td><?php echo 'NRs. '.$row['expense']; ?></td>
-                                    <td><?php echo $row['expensecategory']; ?></td>
+                                    <td><?php echo $row['idate']; ?></td>
+                                    <td><?php echo 'NRs. '.$row['amount']; ?></td>
+                                    <td><?php echo $row['description']; ?></td>
                                     <td class="text-center">
-                                        <a href="editexpense.php?edit=<?php echo $row['expense_id']; ?>" class="btn btn-primary btn-sm" style="border-radius:0%;">Edit</a>
+                                        <a href="editincome.php?edit=<?php echo $row['income_id']; ?>" class="btn btn-primary btn-sm" style="border-radius:0%;">Edit</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="editexpense.php?delete=<?php echo $row['expense_id']; ?>" class="btn btn-danger btn-sm" style="border-radius:0%;">Delete</a>
+                                        <a href="editincome.php?delete=<?php echo $row['income_id']; ?>" class="btn btn-danger btn-sm" style="border-radius:0%;">Delete</a>
                                     </td>
                                 </tr>
                             <?php $count++; } ?>
@@ -99,7 +95,5 @@ $exp_fetched = mysqli_query($con, "SELECT * FROM expenses WHERE user_id = '$user
     <script>
         feather.replace()
     </script>
-
 </body>
-
 </html>

@@ -3,7 +3,6 @@
   include_once("config.php");
   $exp_category_dc = mysqli_query($con, "SELECT expensecategory FROM expenses WHERE user_id = '$userid' GROUP BY expensecategory");
   $exp_amt_dc = mysqli_query($con, "SELECT SUM(expense) FROM expenses WHERE user_id = '$userid' GROUP BY expensecategory");
-
   $exp_date_line = mysqli_query($con, "SELECT expensedate FROM expenses WHERE user_id = '$userid' GROUP BY expensedate");
   $exp_amt_line = mysqli_query($con, "SELECT SUM(expense) FROM expenses WHERE user_id = '$userid' GROUP BY expensedate");
 ?>
@@ -11,28 +10,11 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>Expense Manager - Dashboard</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- css to remove if not in use -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-  <!-- css to remove if not in use -->
-
-  <!-- Feather JS for Icons -->
-  <script src="js/feather.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <style>
     .card a {
       color: #000;
@@ -50,23 +32,14 @@
 <body>
 
   <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
     <?php
       include_once("sidebar.php");
       ?>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
     <div id="page-content-wrapper">
-
       <nav class="navbar navbar-expand-lg navbar-light  border-bottom">
-
-
         <button class="toggler" type="button" id="menu-toggle" aria-expanded="false">
           <span data-feather="menu"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item dropdown">
@@ -82,14 +55,11 @@
           </ul>
         </div>
       </nav>
-
       <div class="container-fluid">
         <h3 class="mt-4">Dashboard</h3>
         <?php
           include_once("dashboard.php");
-        ?>
-      
-       
+        ?>      
 <br><br><br>
         <h3 class="mt-4">Full-Expense Report</h3>
         <div class="row">
@@ -118,19 +88,13 @@
 
       </div>
     </div>
-    <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="js/jquery.slim.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/Chart.min.js"></script>
-  <!-- Menu Toggle Script -->
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     $("#menu-toggle").click(function(e) {
-      e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
@@ -199,17 +163,10 @@
         }]
       }
     });
-  
     </script>
-    <script src="js/index.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/chart-data.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/easypiechart.js"></script>
     <script src="js/easypiechart-data.js"></script>
     
-
-
 </body>
-
 </html>

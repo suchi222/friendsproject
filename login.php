@@ -34,9 +34,7 @@ if (isset($_POST['email'])) {
   <meta name="author" content="">
 
   <title>Login</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     .login-form {
       width: 340px;
@@ -123,9 +121,6 @@ if (isset($_POST['email'])) {
     <p class="text-center">Don't have an account?<a href="register.php" class="text-danger"> Register Here</a></p>
   </div>
 </body>
-<!-- Bootstrap core JavaScript -->
-<script src="js/jquery.slim.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script>  
 function validateform(){  
 
@@ -139,12 +134,12 @@ if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
   return false;  
   }  
  
-}else if(password.length<6){  
+else if(password.length<6){  
   alert("Password must be at least 6 characters long.");  
   return false;  
   }  
+}
 
-}  
 </script>  
 
 </html>

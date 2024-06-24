@@ -10,6 +10,7 @@
         <a href="addincome.php" class="list-group-item list-group-item-action"><span data-feather="plus-square"></span> Add Income</a>
         <a href="add_expense.php" class="list-group-item list-group-item-action"><span data-feather="plus-square"></span> Add Expenses</a>
         <a href="manage_expense.php" class="list-group-item list-group-item-action"><span data-feather="dollar-sign"></span> Manage Expenses</a>
+        <a href="manage_income.php" class="list-group-item list-group-item-action"><span data-feather="dollar-sign"></span> Manage Income</a>
       </div>
       <div class="sidebar-heading">Settings </div>
       <div class="list-group list-group-flush">
